@@ -1,0 +1,202 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Segoe UI', system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="100%" stop-color="#e11d48"/>
+    </linearGradient>
+    <linearGradient id="chainGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="25%" stop-color="#eab308"/>
+      <stop offset="50%" stop-color="#3b82f6"/>
+      <stop offset="75%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#f43f5e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="960" height="620" rx="16" fill="url(#bg)"/>
+
+  <!-- Title Section -->
+  <text x="480" y="48" text-anchor="middle" fill="#f8fafc" font-size="26" font-weight="700">🧠 AI Prompts Playbook</text>
+  <text x="480" y="74" text-anchor="middle" fill="#94a3b8" font-size="13">질문의 구조가 답의 품질을 결정한다 — Chain of Thought 기반 PM 프롬프트 33개</text>
+
+  <!-- Divider -->
+  <line x1="80" y1="92" x2="880" y2="92" stroke="#334155" stroke-width="1"/>
+
+  <!-- === THREE LAYERS SECTION === -->
+  <text x="80" y="122" fill="#cbd5e1" font-size="12" font-weight="600" letter-spacing="2">세 개의 질문 — 3-LAYER COGNITIVE FRAMEWORK</text>
+
+  <!-- Layer 1 Card -->
+  <rect x="60" y="138" width="270" height="140" rx="12" fill="#0f2918" stroke="#22c55e" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="60" y="138" width="270" height="4" rx="2" fill="url(#g1)"/>
+  <text x="84" y="168" fill="#22c55e" font-size="20">⚡</text>
+  <text x="108" y="168" fill="#f8fafc" font-size="15" font-weight="700">Layer 1: 전문가의 눈</text>
+  <text x="84" y="192" fill="#94a3b8" font-size="11.5">❓ 전문가는 이 문제를 어떤 틀로 보나?</text>
+  <text x="84" y="212" fill="#64748b" font-size="11">→ 전문가의 프레이밍을 빌려서 질문</text>
+  <text x="84" y="232" fill="#64748b" font-size="11">→ 복사 + 붙여넣기, 5-10분</text>
+  <rect x="84" y="248" width="72" height="20" rx="10" fill="#22c55e" fill-opacity="0.15"/>
+  <text x="120" y="262" text-anchor="middle" fill="#22c55e" font-size="10" font-weight="600">모든 역할</text>
+
+  <!-- Arrow 1→2 -->
+  <path d="M340 208 L355 208" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+  <text x="348" y="200" fill="#64748b" font-size="8" text-anchor="middle">피상적?</text>
+
+  <!-- Layer 2 Card -->
+  <rect x="365" y="138" width="270" height="140" rx="12" fill="#0c1929" stroke="#3b82f6" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="365" y="138" width="270" height="4" rx="2" fill="url(#g2)"/>
+  <text x="389" y="168" fill="#3b82f6" font-size="20">🧠</text>
+  <text x="413" y="168" fill="#f8fafc" font-size="15" font-weight="700">Layer 2: 합의 너머</text>
+  <text x="389" y="192" fill="#94a3b8" font-size="11.5">❓ 전문가들도 답을 못 내린 부분은?</text>
+  <text x="389" y="212" fill="#64748b" font-size="11">→ CoT로 논쟁 지점을 탐구</text>
+  <text x="389" y="232" fill="#64748b" font-size="11">→ 교육 주석 포함, 20-30분</text>
+  <rect x="389" y="248" width="100" height="20" rx="10" fill="#3b82f6" fill-opacity="0.15"/>
+  <text x="439" y="262" text-anchor="middle" fill="#3b82f6" font-size="10" font-weight="600">PM / 컨설턴트</text>
+
+  <!-- Arrow 2→3 -->
+  <path d="M645 208 L660 208" stroke="#475569" stroke-width="1.5"/>
+  <text x="653" y="200" fill="#64748b" font-size="8" text-anchor="middle">검증?</text>
+
+  <!-- Layer 3 Card -->
+  <rect x="670" y="138" width="270" height="140" rx="12" fill="#1a0c14" stroke="#f43f5e" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="670" y="138" width="270" height="4" rx="2" fill="url(#g3)"/>
+  <text x="694" y="168" fill="#f43f5e" font-size="20">🔧</text>
+  <text x="718" y="168" fill="#f8fafc" font-size="15" font-weight="700">Layer 3: 자기 검증</text>
+  <text x="694" y="192" fill="#94a3b8" font-size="11.5">❓ 내가 이해한 걸 어떻게 테스트하나?</text>
+  <text x="694" y="212" fill="#64748b" font-size="11">→ Python/SQL로 결과를 코드 검증</text>
+  <text x="694" y="232" fill="#64748b" font-size="11">→ 자동화 파이프라인, 30-60분</text>
+  <rect x="694" y="248" width="100" height="20" rx="10" fill="#f43f5e" fill-opacity="0.15"/>
+  <text x="744" y="262" text-anchor="middle" fill="#f43f5e" font-size="10" font-weight="600">개발자 / AI엔지니어</text>
+
+  <!-- === WORKFLOW CHAIN === -->
+  <line x1="80" y1="300" x2="880" y2="300" stroke="#334155" stroke-width="1"/>
+  <text x="80" y="328" fill="#cbd5e1" font-size="12" font-weight="600" letter-spacing="2">워크플로우 체이닝 — PROMPT CHAIN</text>
+
+  <!-- Chain nodes -->
+  <!-- Node 1: 경쟁사 감정 분석 -->
+  <rect x="60" y="345" width="120" height="56" rx="8" fill="#132a15" stroke="#22c55e" stroke-width="1"/>
+  <text x="120" y="366" text-anchor="middle" fill="#22c55e" font-size="10" font-weight="600">🔍 analyze</text>
+  <text x="120" y="382" text-anchor="middle" fill="#e2e8f0" font-size="9.5">경쟁사 감정 분석</text>
+  <text x="120" y="395" text-anchor="middle" fill="#64748b" font-size="8">5개 페르소나 + 기회</text>
+
+  <!-- Arrow -->
+  <line x1="184" y1="373" x2="204" y2="373" stroke="#475569" stroke-width="1.2"/>
+  <polygon points="204,370 210,373 204,376" fill="#475569"/>
+
+  <!-- Node 2: 문제 정의 -->
+  <rect x="214" y="345" width="120" height="56" rx="8" fill="#132a15" stroke="#22c55e" stroke-width="1"/>
+  <text x="274" y="366" text-anchor="middle" fill="#22c55e" font-size="10" font-weight="600">🔍 analyze</text>
+  <text x="274" y="382" text-anchor="middle" fill="#e2e8f0" font-size="9.5">문제 정의</text>
+  <text x="274" y="395" text-anchor="middle" fill="#64748b" font-size="8">Problem Statement</text>
+
+  <!-- Arrow -->
+  <line x1="338" y1="373" x2="358" y2="373" stroke="#475569" stroke-width="1.2"/>
+  <polygon points="358,370 364,373 358,376" fill="#475569"/>
+
+  <!-- Node 3: RICE 우선순위 -->
+  <rect x="368" y="345" width="120" height="56" rx="8" fill="#1a1608" stroke="#eab308" stroke-width="1"/>
+  <text x="428" y="366" text-anchor="middle" fill="#eab308" font-size="10" font-weight="600">⚖️ decide</text>
+  <text x="428" y="382" text-anchor="middle" fill="#e2e8f0" font-size="9.5">RICE 우선순위</text>
+  <text x="428" y="395" text-anchor="middle" fill="#64748b" font-size="8">점수화된 기능 목록</text>
+
+  <!-- Arrow -->
+  <line x1="492" y1="373" x2="512" y2="373" stroke="#475569" stroke-width="1.2"/>
+  <polygon points="512,370 518,373 512,376" fill="#475569"/>
+
+  <!-- Node 4: AI 기능 PRD -->
+  <rect x="522" y="345" width="120" height="56" rx="8" fill="#0c1929" stroke="#3b82f6" stroke-width="1"/>
+  <text x="582" y="366" text-anchor="middle" fill="#3b82f6" font-size="10" font-weight="600">🛠️ create</text>
+  <text x="582" y="382" text-anchor="middle" fill="#e2e8f0" font-size="9.5">AI 기능 PRD</text>
+  <text x="582" y="395" text-anchor="middle" fill="#64748b" font-size="8">기술 스펙 포함</text>
+
+  <!-- Arrow -->
+  <line x1="646" y1="373" x2="666" y2="373" stroke="#475569" stroke-width="1.2"/>
+  <polygon points="666,370 672,373 666,376" fill="#475569"/>
+
+  <!-- Node 5: 메트릭스 -->
+  <rect x="676" y="345" width="120" height="56" rx="8" fill="#190c20" stroke="#a855f7" stroke-width="1"/>
+  <text x="736" y="366" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="600">📊 measure</text>
+  <text x="736" y="382" text-anchor="middle" fill="#e2e8f0" font-size="9.5">AI 도입 메트릭스</text>
+  <text x="736" y="395" text-anchor="middle" fill="#64748b" font-size="8">성공 지표 정의</text>
+
+  <!-- Arrow -->
+  <line x1="800" y1="373" x2="820" y2="373" stroke="#475569" stroke-width="1.2"/>
+  <polygon points="820,370 826,373 820,376" fill="#475569"/>
+
+  <!-- Node 6: 얼라인먼트 -->
+  <rect x="830" y="345" width="110" height="56" rx="8" fill="#1a0c14" stroke="#f43f5e" stroke-width="1"/>
+  <text x="885" y="366" text-anchor="middle" fill="#f43f5e" font-size="10" font-weight="600">💬 communicate</text>
+  <text x="885" y="382" text-anchor="middle" fill="#e2e8f0" font-size="9.5">이해관계자 정렬</text>
+  <text x="885" y="395" text-anchor="middle" fill="#64748b" font-size="8">팀 승인 확보</text>
+
+  <!-- Chain flow bar -->
+  <rect x="60" y="412" width="880" height="3" rx="1.5" fill="url(#chainGrad)" opacity="0.5"/>
+
+  <!-- === STATS BAR === -->
+  <line x1="80" y1="435" x2="880" y2="435" stroke="#334155" stroke-width="1"/>
+  <text x="80" y="463" fill="#cbd5e1" font-size="12" font-weight="600" letter-spacing="2">한눈에 보는 플레이북</text>
+
+  <!-- Stat Cards Row 1 -->
+  <rect x="60" y="478" width="168" height="58" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="144" y="501" text-anchor="middle" fill="#f8fafc" font-size="24" font-weight="700">33</text>
+  <text x="144" y="520" text-anchor="middle" fill="#94a3b8" font-size="10">프롬프트</text>
+
+  <rect x="242" y="478" width="168" height="58" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="326" y="501" text-anchor="middle" fill="#f8fafc" font-size="24" font-weight="700">5</text>
+  <text x="326" y="520" text-anchor="middle" fill="#94a3b8" font-size="10">카테고리</text>
+
+  <rect x="424" y="478" width="168" height="58" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="508" y="501" text-anchor="middle" fill="#f8fafc" font-size="24" font-weight="700">24,300+</text>
+  <text x="508" y="520" text-anchor="middle" fill="#94a3b8" font-size="10">라인</text>
+
+  <rect x="606" y="478" width="168" height="58" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="690" y="501" text-anchor="middle" fill="#f8fafc" font-size="24" font-weight="700">26</text>
+  <text x="690" y="520" text-anchor="middle" fill="#94a3b8" font-size="10">Python 클래스</text>
+
+  <rect x="788" y="478" width="152" height="58" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="864" y="501" text-anchor="middle" fill="#f8fafc" font-size="24" font-weight="700">🇰🇷</text>
+  <text x="864" y="520" text-anchor="middle" fill="#94a3b8" font-size="10">한국 PM 전용</text>
+
+  <!-- === CATEGORIES ROW === -->
+  <g transform="translate(60, 552)">
+    <rect width="168" height="28" rx="6" fill="#132a15" stroke="#22c55e" stroke-width="0.8"/>
+    <text x="84" y="18" text-anchor="middle" fill="#22c55e" font-size="10" font-weight="600">🔍 analyze (7)</text>
+  </g>
+  <g transform="translate(242, 552)">
+    <rect width="168" height="28" rx="6" fill="#1a1608" stroke="#eab308" stroke-width="0.8"/>
+    <text x="84" y="18" text-anchor="middle" fill="#eab308" font-size="10" font-weight="600">⚖️ decide (6)</text>
+  </g>
+  <g transform="translate(424, 552)">
+    <rect width="168" height="28" rx="6" fill="#0c1929" stroke="#3b82f6" stroke-width="0.8"/>
+    <text x="84" y="18" text-anchor="middle" fill="#3b82f6" font-size="10" font-weight="600">🛠️ create (9)</text>
+  </g>
+  <g transform="translate(606, 552)">
+    <rect width="168" height="28" rx="6" fill="#190c20" stroke="#a855f7" stroke-width="0.8"/>
+    <text x="84" y="18" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="600">📊 measure (3)</text>
+  </g>
+  <g transform="translate(788, 552)">
+    <rect width="152" height="28" rx="6" fill="#1a0c14" stroke="#f43f5e" stroke-width="0.8"/>
+    <text x="76" y="18" text-anchor="middle" fill="#f43f5e" font-size="10" font-weight="600">💬 communicate (5)</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="480" y="607" text-anchor="middle" fill="#475569" font-size="10">MIT License · v2.1 · github.com/your-repo/ai-prompts-playbook</text>
+</svg>
