@@ -28,7 +28,22 @@
 - `🧠 Layer 2: Deep Dive` — Reasoning Strategy + `<!-- 💬 -->` 교육 주석
 - `🔧 Layer 3: Build & Automate` — Python 코드 또는 CLI 명령어
 
-템플릿: [layered-prompt-template.md](prompts/templates/layered-prompt-template.md)
+템플릿: [layered-prompt-template.md](templates/layered-prompt-template.md)
+
+**레지스트리도 함께 업데이트하세요:**
+
+새 업무 프롬프트를 추가하면 루트의 [`registry/prompts.yaml`](../registry/prompts.yaml)에 다음 필드를 추가해야 합니다.
+
+- `id`
+- `title`
+- `category`
+- `path`
+- `audience`
+- `input_types`
+- `output_types`
+- `tags`
+- `starter`
+- `next`
 
 ### 2. 기존 프롬프트 개선
 
@@ -73,6 +88,9 @@ PR 제출 전에 확인해주세요:
 - [ ] 🔧 Layer 3에 실행 가능한 코드가 포함되어 있는가?
 - [ ] 📊 실행 결과 예시가 있는가?
 - [ ] 🔗 다음 단계에서 연결 프롬프트가 명시되어 있는가?
+- [ ] 🗂️ `registry/prompts.yaml`에 메타데이터가 추가/수정되었는가?
+- [ ] 🧪 핵심 프롬프트라면 `evals/scenarios/`에 평가 시나리오가 있는가?
+- [ ] 🔗 로컬 Markdown 링크가 깨지지 않는가?
 - [ ] 한국어가 자연스러운가? (번역투 아님)
 
 ---

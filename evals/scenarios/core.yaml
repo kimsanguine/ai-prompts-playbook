@@ -1,0 +1,84 @@
+schema_version: 1
+scenarios:
+  - id: starter-competitor-sentiment
+    prompt_id: competitor-sentiment
+    layer: 1
+    purpose: 초급자가 리뷰 데이터에서 페르소나와 기회를 뽑을 수 있는지 검증
+    sample_input:
+      competitor_name: "Notion"
+      review_count: 20
+      data_shape: "review_text, rating, source, date"
+    must_include:
+      - persona_table
+      - sentiment_score
+      - quoted_evidence
+      - opportunity_matrix
+      - assumptions
+    failure_signals:
+      - "리뷰 근거 없이 일반적인 기능 비교만 한다"
+      - "페르소나가 사용자 문제 대신 직무명만 나열된다"
+  - id: starter-problem-framing
+    prompt_id: problem-framing
+    layer: 1
+    purpose: 모호한 기회를 검증 가능한 문제 정의로 바꾸는지 검증
+    sample_input:
+      opportunity: "경쟁사 고객은 온보딩이 어렵다고 반복해서 불만을 남긴다"
+      business_goal: "무료 사용자에서 유료 전환율 개선"
+    must_include:
+      - problem_statement
+      - user_problem
+      - business_impact
+      - assumptions
+      - validation_questions
+    failure_signals:
+      - "솔루션부터 제안한다"
+      - "사용자 문제와 비즈니스 문제가 섞인다"
+  - id: starter-feature-prioritization
+    prompt_id: feature-prioritization
+    layer: 1
+    purpose: RICE 점수와 근거를 함께 산출하는지 검증
+    sample_input:
+      feature_count: 8
+      context: "B2B SaaS 온보딩 개선"
+    must_include:
+      - RICE_table
+      - score_rationale
+      - confidence_notes
+      - first_sprint_candidates
+    failure_signals:
+      - "점수만 있고 근거가 없다"
+      - "Confidence가 낮은 항목을 검증 없이 1순위로 둔다"
+  - id: starter-ai-prd
+    prompt_id: prd-for-ai-feature
+    layer: 1
+    purpose: AI 기능 PRD에 실패 시나리오와 평가 계획이 포함되는지 검증
+    sample_input:
+      feature_name: "고객 문의 자동 분류"
+      data_sources: ["support tickets", "product usage logs"]
+      risk_context: "개인정보 포함 가능"
+    must_include:
+      - user_value
+      - model_quality_metric
+      - failure_modes
+      - evaluation_plan
+      - privacy_and_ethics_risks
+    failure_signals:
+      - "일반 PRD처럼 기능 설명만 한다"
+      - "모델 평가 기준이 숫자로 없다"
+  - id: starter-executive-briefing
+    prompt_id: executive-briefing
+    layer: 1
+    purpose: 의사결정자가 읽을 수 있는 두괄식 브리핑인지 검증
+    sample_input:
+      decision_needed: "AI 고객 문의 분류 기능 개발 승인"
+      expected_impact: "CS 처리 시간 25% 감소"
+      estimated_cost: "8주, 엔지니어 2명"
+    must_include:
+      - decision_request
+      - recommendation
+      - impact_cost_risk
+      - alternatives
+      - next_steps_after_approval
+    failure_signals:
+      - "배경 설명이 길고 요청이 늦게 나온다"
+      - "리스크와 대안이 없다"

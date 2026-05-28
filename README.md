@@ -12,9 +12,9 @@
 
 같은 AI. 다른 질문. 완전히 다른 결과.
 
-이 플레이북은 **"AI에게 어떻게 질문할 것인가"**에 대한 33개의 답입니다.
+이 플레이북은 **"AI에게 어떻게 질문할 것인가"**에 대한 30개의 업무 프롬프트와 5개의 메타 가이드입니다.
 PM이 매일 하는 일 — 경쟁사 분석, PRD 작성, 스프린트 기획, 임원 보고 — 을
-**Chain of Thought(CoT) 기반의 구조적 질문**으로 풀어냅니다.
+**구조화된 질문, 판단 기준, 검증 루프**로 풀어냅니다.
 
 ---
 
@@ -31,10 +31,10 @@ PM이 매일 하는 일 — 경쟁사 분석, PRD 작성, 스프린트 기획, �
 ```
 
 차이는 "더 자세히 쓴 것"이 아닙니다.
-**AI에게 추론의 순서(Chain of Thought)를 설계해준 것**입니다.
+**AI에게 어떤 기준으로 보고, 어떤 순서로 정리하고, 무엇을 검증해야 하는지 설계해준 것**입니다.
 
 이 플레이북의 모든 프롬프트는 이 원리 위에 있습니다:
-> **전문가의 사고 순서를 빌려서, AI에게 그 순서대로 생각하게 한다.**
+> **전문가의 프레이밍을 빌리고, 판단 근거와 가정을 드러내며, 마지막에는 실제 데이터로 검증한다.**
 
 ---
 
@@ -59,7 +59,7 @@ graph LR
 | | Layer 1: 전문가의 눈 | Layer 2: 합의 너머 | Layer 3: 자기 검증 |
 |--|--|--|--|
 | **질문** | 전문가는 이 문제를 어떤 프레임으로 보나? | 전문가들 사이에서도 의견이 갈리는 지점은? | 내가 얻은 답을 어떻게 테스트하나? |
-| **AI 활용** | 전문가의 프레이밍을 빌려서 질문 | CoT로 논쟁 지점을 탐구 | Python/SQL로 결과를 코드 검증 |
+| **AI 활용** | 전문가의 프레이밍을 빌려서 질문 | 판단 기준, 근거, 가정을 분리 | Python/SQL로 결과를 코드 검증 |
 | **소요** | 5-10분 | 20-30분 | 30-60분 |
 | **결과** | 구조화된 초안 | 전문가급 분석 | 자동화된 파이프라인 |
 
@@ -93,7 +93,7 @@ graph LR
 
 **왜 이게 일반 프롬프트와 다른가요?**
 - `역할 설정` → AI가 전문가의 프레이밍을 빌림
-- `추론 전략 1→2→3` → AI가 단계별로 사고함 (CoT)
+- `추론 전략 1→2→3` → AI가 결과를 구조화하고 근거를 남김
 - `출력 형식 지정` → 결과가 바로 의사결정에 쓸 수 있는 형태
 
 → [이 프롬프트의 Layer 2, 3 보기](prompts/analyze/competitor-sentiment.md)
@@ -132,6 +132,35 @@ graph TD
 
 ---
 
+## 🧭 초급자는 여기서 시작하세요
+
+30개를 모두 읽지 마세요. 처음에는 [`starter/`](starter/)의 5개 경로만 따라가면 됩니다.
+
+| 순서 | 프롬프트 | 결과물 |
+|------|----------|--------|
+| 1 | [경쟁사 감성 분석](prompts/analyze/competitor-sentiment.md) | 페르소나 + 기회 매트릭스 |
+| 2 | [문제 정의](prompts/analyze/problem-framing.md) | 검증 가능한 Problem Statement |
+| 3 | [기능 우선순위](prompts/decide/feature-prioritization.md) | RICE 기반 우선순위 |
+| 4 | [AI 기능 PRD](prompts/create/prd-for-ai-feature.md) | 실패 시나리오 포함 PRD |
+| 5 | [임원 브리핑](prompts/create/executive-briefing.md) | 의사결정용 브리핑 |
+
+---
+
+## 🗂️ 데이터로 활용하기
+
+이 저장소는 Markdown 문서로 읽을 수도 있고, 구조화된 프롬프트 레지스트리로 활용할 수도 있습니다.
+
+| 용도 | 파일 |
+|------|------|
+| 프롬프트 검색/추천 | [`registry/prompts.yaml`](registry/prompts.yaml) |
+| 초급자 첫 실행 경로 | [`starter/README.md`](starter/README.md) |
+| 프롬프트 평가 시나리오 | [`evals/scenarios/core.yaml`](evals/scenarios/core.yaml) |
+| 평가 기준 | [`evals/README.md`](evals/README.md) |
+
+앱이나 RAG에 연결할 때는 Markdown 전체를 바로 임베딩하기보다 `registry/prompts.yaml`의 `id`, `category`, `input_types`, `output_types`, `tags`, `next`를 먼저 인덱싱하세요.
+
+---
+
 ## 🎯 나에게 맞는 프롬프트
 
 ### 지금 급한 일이 뭔가요?
@@ -162,7 +191,7 @@ graph TD
 
 ---
 
-## 📦 전체 33개 프롬프트
+## 📦 전체 30개 업무 프롬프트
 
 <details>
 <summary><b>🔍 analyze/ — 데이터 구조화 & 패턴 발견 (7개)</b></summary>
@@ -277,7 +306,7 @@ graph TD
 
 A Harvard AI tutor study (2024) found that students who received **structured questions** achieved 2x higher learning outcomes than those who simply received answers — using the exact same AI. The difference wasn't the AI. It was the structure of the question.
 
-This playbook applies that principle to Product Management. **33 prompts** built on Chain of Thought reasoning, where every prompt designs a step-by-step thinking sequence for AI — not just a request for information.
+This playbook applies that principle to Product Management. It contains **30 workflow prompts** and **5 meta guides**. Each prompt defines a task frame, decision criteria, evidence requirements, and a verification step — not just a request for information.
 
 ```mermaid
 graph LR
@@ -296,7 +325,7 @@ graph LR
 These aren't difficulty levels. They're **depths of cognition** — borrow expert thinking → challenge consensus → verify with code.
 
 **What makes this different:**
-- Every prompt embeds **Chain of Thought** — AI reasons step-by-step through expert frameworks, not just retrieves information
+- Every prompt asks for **decision criteria, evidence, assumptions, and verification** instead of hidden reasoning traces
 - Prompts **chain together** — output of one becomes input of the next, creating end-to-end PM workflows
 - **Korean market data** built in — local regulations (PIPA, AI Act), business culture (consensus decision-making, 품의서), and data sources (DART, JobPlanet)
 - **Educational annotations** (`[Expert's Lens]`, `[Debate Point]`, `[Self-Check]`) explain *why*, not just *what*
@@ -305,4 +334,13 @@ These aren't difficulty levels. They're **depths of cognition** — borrow exper
 
 ---
 
-**License**: MIT · **Version**: 2.1 (2026-03-12) · **Author**: Ethan Kim
+## Sources and Verification
+
+- Harvard Gazette: [Professor tailored AI tutor to physics course. Engagement doubled.](https://news.harvard.edu/gazette/story/2024/09/professor-tailored-ai-tutor-to-physics-course-engagement-doubled/)
+- OpenAI docs: [Prompting guide](https://platform.openai.com/docs/guides/prompting) and [Reasoning best practices](https://platform.openai.com/docs/guides/reasoning-best-practices)
+
+Claims about regulations, model behavior, and market data should be checked against current primary sources before production use.
+
+---
+
+**License**: [MIT](LICENSE) · **Version**: 2.2 (2026-03-12) · **Author**: Ethan Kim

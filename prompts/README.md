@@ -5,7 +5,7 @@
 *Think like a PM. Prompt like an engineer. Ship with AI.*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Prompts](https://img.shields.io/badge/Prompts-33-blue.svg)](#-프롬프트-목록)
+[![Prompts](https://img.shields.io/badge/Workflow%20Prompts-30-blue.svg)](#-프롬프트-목록)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 ---
@@ -18,8 +18,8 @@
 
 > "프롬프트 잘 쓰는 법을 배우고 싶은데, 이론만 있고 실전 예시가 없어요."
 
-이 Playbook은 **"AI에게 어떻게 생각해야 하는지"를 알려주는 프롬프트 모음**입니다.
-단순한 질문 템플릿이 아니라, 20년간 AI 제품을 만들며 검증한 **구조화된 사고 프레임워크**가 각 프롬프트에 담겨 있습니다.
+이 Playbook은 **"AI에게 어떤 기준으로 정리하고 무엇을 검증해야 하는지"를 알려주는 프롬프트 모음**입니다.
+단순한 질문 템플릿이 아니라, PM 업무를 구조화된 입력, 판단 기준, 출력 형식, 검증 질문으로 바꾸는 프레임워크가 각 프롬프트에 담겨 있습니다.
 
 ---
 
@@ -63,6 +63,8 @@ AI에게 "경쟁사 분석해줘"라고 하면 위키피디아 수준의 요약�
 ---
 
 ## 📂 프롬프트 목록
+
+업무 프롬프트는 30개입니다. 철학, 사용법, 빌더 같은 메타 문서는 별도 가이드로 관리합니다.
 
 <details>
 <summary><b>🔍 분석하기 (analyze/) — 7개 프롬프트</b></summary>
@@ -160,7 +162,7 @@ AI에게 "경쟁사 분석해줘"라고 하면 위키피디아 수준의 요약�
 </details>
 
 <details>
-<summary><b>🧩 메타 프롬프트 (meta/) — 3개 프롬프트</b></summary>
+<summary><b>🧩 메타 가이드 (meta/) — 5개 문서</b></summary>
 
 > *"프롬프트를 잘 쓰고 싶은데, 어디서부터 배우죠?"*
 
@@ -170,6 +172,7 @@ AI에게 "경쟁사 분석해줘"라고 하면 위키피디아 수준의 요약�
 |---------|--------------|
 | 🧠 [세 개의 질문](meta/three-questions.md) | AI 시대에 어떻게 질문해야 하는지, 이 Playbook의 철학을 이해하고 싶을 때 |
 | 📐 [설계 원칙 가이드](meta/design-principles.md) | 이 Playbook의 7가지 원칙이 왜 작동하는지 이해하고 싶을 때 |
+| 📖 [사용법 가이드](meta/how-to-use.md) | 처음 실행할 때 레이어별 사용법을 알고 싶을 때 |
 | 🔧 [프롬프트 빌더](meta/prompt-builder.md) | 나만의 프롬프트를 처음부터 만들고 싶을 때 |
 | 🔬 [프롬프트 해부학](meta/prompt-anatomy.md) | 좋은 프롬프트가 왜 좋은지 역공학으로 분석하고 싶을 때 |
 
@@ -207,6 +210,8 @@ AI에게 "경쟁사 분석해줘"라고 하면 위키피디아 수준의 요약�
 
 ## 🎓 처음이세요? 이 순서로 시작하세요
 
+전체 30개를 한 번에 보지 말고, 루트의 [Starter Path](../starter/)를 먼저 따라가세요.
+
 | 단계 | 뭘 하나요? | 소요 시간 |
 |------|-----------|----------|
 | 1️⃣ | [세 개의 질문](meta/three-questions.md)을 읽으세요 — 이 Playbook이 왜 존재하는지 | 10분 |
@@ -220,7 +225,7 @@ AI에게 "경쟁사 분석해줘"라고 하면 위키피디아 수준의 요약�
 ### 프롬프트 엔지니어링을 더 배우고 싶다면
 
 이 Playbook은 "잘 설계된 프롬프트를 쓰면서 자연스럽게 배우는" 접근입니다.
-이론과 기법(CoT, Few-shot, Self-consistency 등)을 체계적으로 공부하려면:
+이론과 기법(reasoning strategy, few-shot, self-consistency 등)을 체계적으로 공부하려면:
 
 - [Prompt Engineering Guide](https://github.com/dair-ai/Prompt-Engineering-Guide) — 300만+ 학습자, 가장 포괄적인 가이드
 - [NirDiamant/Prompt_Engineering](https://github.com/NirDiamant/Prompt_Engineering) — 초보→고급 튜토리얼
@@ -241,7 +246,7 @@ AI에게 "경쟁사 분석해줘"라고 하면 위키피디아 수준의 요약�
 │  🧠 Layer 2: 합의된 영역 너머 보기                        │
 │                                                         │
 │  "어디서 전문가들조차 답을 못 내리는가?"                     │
-│  → CoT로 단계별 추론 + [논쟁 지점] 교육 주석               │
+│  → 판단 기준, 근거, 가정 분리 + [논쟁 지점] 교육 주석       │
 ├─────────────────────────────────────────────────────────┤
 │  🔧 Layer 3: 자기 검증                                   │
 │                                                         │
@@ -272,9 +277,9 @@ AI에게 "경쟁사 분석해줘"라고 하면 위키피디아 수준의 요약�
 
 | # | 원칙 | 핵심 |
 |---|------|------|
-| 1 | **질문과 답변 구조** | 결과물보다 사고 과정을 설계한다 |
+| 1 | **질문과 답변 구조** | 결과물보다 판단 기준과 검증 구조를 설계한다 |
 | 2 | **데이터 기반 가설** | 감이 아니라 데이터에서 가설을 세운다 |
-| 3 | **Reasoning Strategy** | AI의 추론 단계를 명시적으로 설계한다 |
+| 3 | **Reasoning Strategy** | 작업 순서, 근거 요구, 검증 기준을 명시한다 |
 | 4 | **워크플로우 체인** | 하나의 결과물이 다음 프롬프트의 입력이 된다 |
 | 5 | **자기 검증** | 마지막 단계에서 모호한 부분을 스스로 찾아 고친다 |
 | 6 | **레이어드 접근성** | 누구나 시작할 수 있고, 깊이는 선택이다 |
@@ -294,6 +299,16 @@ AI에게 "경쟁사 분석해줘"라고 하면 위키피디아 수준의 요약�
 - ⭐ **도움이 되었다면** — Star를 눌러주세요
 
 기여 가이드: [CONTRIBUTING.md](CONTRIBUTING.md)
+
+---
+
+## 🗂️ 구조화 데이터
+
+자동 추천, 검색, 평가에는 Markdown 원문보다 레지스트리를 먼저 사용하세요.
+
+- [프롬프트 레지스트리](../registry/prompts.yaml)
+- [초급자 스타터 경로](../starter/)
+- [평가 시나리오](../evals/scenarios/core.yaml)
 
 ---
 

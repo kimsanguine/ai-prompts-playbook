@@ -1,0 +1,311 @@
+schema_version: 1
+updated: "2026-03-12"
+counts:
+  workflow_prompts: 30
+  meta_docs: 5
+  templates: 2
+prompts:
+  - id: competitor-sentiment
+    title: 경쟁사 감성 분석
+    category: analyze
+    path: prompts/analyze/competitor-sentiment.md
+    audience: [PM, CPO, marketer]
+    input_types: [reviews, competitor_name]
+    output_types: [personas, sentiment_scores, opportunity_matrix]
+    tags: [competitor, review, sentiment, JTBD, opportunity]
+    starter: true
+    next: [problem-framing, positioning-strategy, executive-briefing]
+  - id: problem-framing
+    title: 문제 정의 프레이밍
+    category: analyze
+    path: prompts/analyze/problem-framing.md
+    audience: [PM, designer, founder]
+    input_types: [symptoms, user_feedback, business_context]
+    output_types: [problem_statement, assumptions, validation_questions]
+    tags: [problem, framing, discovery, assumptions]
+    starter: true
+    next: [feature-prioritization, requirements-to-prd]
+  - id: jobs-to-be-done
+    title: Jobs to Be Done 분석
+    category: analyze
+    path: prompts/analyze/jobs-to-be-done.md
+    audience: [PM, designer, researcher]
+    input_types: [interviews, surveys, user_quotes]
+    output_types: [jobs, forces, opportunity_areas]
+    tags: [JTBD, research, user_need]
+    starter: false
+    next: [persona-profiling, requirements-to-prd]
+  - id: persona-profiling
+    title: 페르소나 프로파일링
+    category: analyze
+    path: prompts/analyze/persona-profiling.md
+    audience: [PM, designer, marketer]
+    input_types: [interviews, behavior_logs, surveys]
+    output_types: [personas, needs, objections]
+    tags: [persona, segmentation, research]
+    starter: false
+    next: [customer-journey-mapping, user-story]
+  - id: customer-journey-mapping
+    title: 고객 여정 맵핑
+    category: analyze
+    path: prompts/analyze/customer-journey-mapping.md
+    audience: [PM, designer, CX]
+    input_types: [touchpoints, analytics, support_tickets]
+    output_types: [journey_map, pain_points, opportunity_points]
+    tags: [journey, CX, touchpoint]
+    starter: false
+    next: [problem-framing, user-story-mapping]
+  - id: pestel-analysis
+    title: PESTEL 거시환경 분석
+    category: analyze
+    path: prompts/analyze/pestel-analysis.md
+    audience: [CPO, strategy, founder]
+    input_types: [market, industry, region]
+    output_types: [pestel_matrix, risks, strategy_implications]
+    tags: [market, strategy, regulation, trend]
+    starter: false
+    next: [positioning-strategy, decision-canvas]
+  - id: company-profiling
+    title: 기업/경쟁사 프로파일링
+    category: analyze
+    path: prompts/analyze/company-profiling.md
+    audience: [PM, strategy, sales]
+    input_types: [company_name, public_data, reviews]
+    output_types: [company_profile, risks, opportunities]
+    tags: [company, DART, JobPlanet, competitor]
+    starter: false
+    next: [positioning-strategy, executive-briefing]
+
+  - id: feature-prioritization
+    title: 기능 우선순위 결정
+    category: decide
+    path: prompts/decide/feature-prioritization.md
+    audience: [PM, product_trio]
+    input_types: [feature_list, reach_estimates, effort_estimates]
+    output_types: [RICE_scores, priority_order, roadmap]
+    tags: [RICE, priority, roadmap]
+    starter: true
+    next: [prd-for-ai-feature, sprint-kickoff]
+  - id: positioning-strategy
+    title: 포지셔닝 전략 수립
+    category: decide
+    path: prompts/decide/positioning-strategy.md
+    audience: [CPO, PM, marketer]
+    input_types: [product_context, competitors, customer_segments]
+    output_types: [positioning_statement, value_propositions]
+    tags: [positioning, GTM, strategy]
+    starter: false
+    next: [press-release, executive-briefing]
+  - id: decision-canvas
+    title: 의사결정 캔버스
+    category: decide
+    path: prompts/decide/decision-canvas.md
+    audience: [PM, CPO, product_trio]
+    input_types: [decision_options, constraints, stakeholder_views]
+    output_types: [decision_record, tradeoffs, risks]
+    tags: [decision, tradeoff, alignment]
+    starter: false
+    next: [stakeholder-alignment, executive-briefing]
+  - id: backlog-prioritization
+    title: 백로그 우선순위 정리
+    category: decide
+    path: prompts/decide/backlog-prioritization.md
+    audience: [PM, engineering_manager]
+    input_types: [epics, bugs, constraints]
+    output_types: [P0_P3_backlog, rationale, sequencing]
+    tags: [backlog, priority, sprint]
+    starter: false
+    next: [sprint-kickoff, user-story]
+  - id: sprint-kickoff
+    title: 스프린트 킥오프 설계
+    category: decide
+    path: prompts/decide/sprint-kickoff.md
+    audience: [PM, engineering_manager, scrum_master]
+    input_types: [goal, team_capacity, backlog]
+    output_types: [sprint_plan, risks, team_alignment]
+    tags: [sprint, planning, agile]
+    starter: false
+    next: [user-story, cross-team-handoff]
+  - id: build-vs-buy-ai
+    title: AI Build vs Buy 판단
+    category: decide
+    path: prompts/decide/build-vs-buy-ai.md
+    audience: [CPO, CTO, PM]
+    input_types: [AI_capability, budget, constraints]
+    output_types: [build_buy_recommendation, cost_model, risk_matrix]
+    tags: [AI, build_vs_buy, cost, vendor]
+    starter: false
+    next: [prd-for-ai-feature, ai-adoption-metrics]
+
+  - id: prd-for-ai-feature
+    title: AI 기능 PRD 작성
+    category: create
+    path: prompts/create/prd-for-ai-feature.md
+    audience: [PM, AI_engineer, CPO]
+    input_types: [feature_goal, model_requirements, data_sources]
+    output_types: [AI_PRD, failure_modes, evaluation_plan]
+    tags: [PRD, AI, model, evaluation]
+    starter: true
+    next: [ai-adoption-metrics, ai-ethics-review, stakeholder-alignment]
+  - id: user-story
+    title: 유저 스토리 작성
+    category: create
+    path: prompts/create/user-story.md
+    audience: [PM, engineering_team]
+    input_types: [feature, user_goal, acceptance_context]
+    output_types: [user_stories, acceptance_criteria]
+    tags: [user_story, INVEST, agile]
+    starter: false
+    next: [user-story-splitting, sprint-kickoff]
+  - id: user-story-mapping
+    title: 유저 스토리 맵핑
+    category: create
+    path: prompts/create/user-story-mapping.md
+    audience: [PM, designer, engineering_team]
+    input_types: [user_journey, stories, release_goal]
+    output_types: [story_map, MVP_slice, release_plan]
+    tags: [story_map, release, MVP]
+    starter: false
+    next: [user-story-splitting, backlog-prioritization]
+  - id: user-story-splitting
+    title: 유저 스토리 분할
+    category: create
+    path: prompts/create/user-story-splitting.md
+    audience: [PM, engineering_team]
+    input_types: [large_story, constraints]
+    output_types: [split_stories, acceptance_criteria, dependency_notes]
+    tags: [story_splitting, sprint, agile]
+    starter: false
+    next: [sprint-kickoff]
+  - id: user-story-ai-enhanced
+    title: AI 기준 유저 스토리
+    category: create
+    path: prompts/create/user-story-ai-enhanced.md
+    audience: [PM, AI_engineer]
+    input_types: [AI_feature, user_story_context, risk_context]
+    output_types: [AI_acceptance_criteria, evaluation_cases]
+    tags: [AI, acceptance_criteria, quality]
+    starter: false
+    next: [ai-ethics-review, ab-test-design]
+  - id: spec-to-prd
+    title: 기술 스펙 to PRD
+    category: create
+    path: prompts/create/spec-to-prd.md
+    audience: [PM, engineering_team]
+    input_types: [technical_spec]
+    output_types: [business_PRD, user_value, roadmap]
+    tags: [PRD, spec, reverse_engineering]
+    starter: false
+    next: [stakeholder-alignment, executive-briefing]
+  - id: requirements-to-prd
+    title: 요구사항 to PRD
+    category: create
+    path: prompts/create/requirements-to-prd.md
+    audience: [PM, CPO]
+    input_types: [requirements, stakeholder_feedback, constraints]
+    output_types: [PRD, requirements_traceability, risks]
+    tags: [PRD, requirements, compliance]
+    starter: false
+    next: [feature-prioritization, stakeholder-alignment]
+  - id: executive-briefing
+    title: 경영진 전략 브리핑
+    category: create
+    path: prompts/create/executive-briefing.md
+    audience: [CPO, PM, founder]
+    input_types: [strategy_context, metrics, decision_needed]
+    output_types: [executive_brief, recommendation, decision_request]
+    tags: [executive, briefing, strategy]
+    starter: true
+    next: [stakeholder-alignment, storytelling]
+  - id: product-eol-message
+    title: 제품 종료 안내문
+    category: create
+    path: prompts/create/product-eol-message.md
+    audience: [PM, CX, marketing]
+    input_types: [product_name, end_date, migration_options]
+    output_types: [EOL_message, FAQ, communication_plan]
+    tags: [EOL, communication, customer]
+    starter: false
+    next: [stakeholder-alignment, press-release]
+
+  - id: ai-adoption-metrics
+    title: AI 기능 채택 메트릭
+    category: measure
+    path: prompts/measure/ai-adoption-metrics.md
+    audience: [PM, data_analyst, CPO]
+    input_types: [AI_feature, product_metrics, trust_signals]
+    output_types: [metric_tree, dashboard_spec, alert_rules]
+    tags: [metrics, AI, adoption, trust]
+    starter: false
+    next: [ab-test-design, retention-analysis]
+  - id: ab-test-design
+    title: A/B 테스트 설계
+    category: measure
+    path: prompts/measure/ab-test-design.md
+    audience: [PM, data_analyst, engineer]
+    input_types: [hypothesis, baseline_metric, expected_effect]
+    output_types: [experiment_plan, sample_size, decision_rules]
+    tags: [experiment, AB_test, sample_size]
+    starter: false
+    next: [ai-adoption-metrics, retention-analysis]
+  - id: retention-analysis
+    title: 리텐션 분석
+    category: measure
+    path: prompts/measure/retention-analysis.md
+    audience: [PM, data_analyst, growth]
+    input_types: [cohort_data, usage_events, trust_scores]
+    output_types: [retention_report, cohort_table, action_plan]
+    tags: [retention, cohort, trust]
+    starter: false
+    next: [executive-briefing, storytelling]
+
+  - id: stakeholder-alignment
+    title: 이해관계자 정렬
+    category: communicate
+    path: prompts/communicate/stakeholder-alignment.md
+    audience: [PM, CPO, project_lead]
+    input_types: [stakeholders, proposal, objections]
+    output_types: [stakeholder_map, message_plan, alignment_doc]
+    tags: [alignment, stakeholder, communication]
+    starter: false
+    next: [executive-briefing, storytelling]
+  - id: press-release
+    title: 프레스 릴리즈
+    category: communicate
+    path: prompts/communicate/press-release.md
+    audience: [PM, marketer, founder]
+    input_types: [product_vision, customer_problem, launch_context]
+    output_types: [press_release, FAQ, narrative]
+    tags: [working_backwards, launch, narrative]
+    starter: false
+    next: [storytelling, stakeholder-alignment]
+  - id: storytelling
+    title: 제품 스토리텔링
+    category: communicate
+    path: prompts/communicate/storytelling.md
+    audience: [PM, CPO, marketer]
+    input_types: [data_points, audience, decision_context]
+    output_types: [story_arc, presentation_outline, talk_track]
+    tags: [storytelling, narrative, persuasion]
+    starter: false
+    next: [executive-briefing]
+  - id: ai-ethics-review
+    title: AI 윤리 리뷰
+    category: communicate
+    path: prompts/communicate/ai-ethics-review.md
+    audience: [PM, legal, AI_engineer]
+    input_types: [AI_feature, user_groups, risk_context]
+    output_types: [ethics_checklist, risk_score, mitigation_plan]
+    tags: [AI, ethics, fairness, compliance]
+    starter: false
+    next: [prd-for-ai-feature, stakeholder-alignment]
+  - id: cross-team-handoff
+    title: 팀 간 인수인계
+    category: communicate
+    path: prompts/communicate/cross-team-handoff.md
+    audience: [PM, engineering_team, operations]
+    input_types: [project_context, owners, open_issues]
+    output_types: [handoff_doc, owner_matrix, risk_log]
+    tags: [handoff, operations, context]
+    starter: false
+    next: [stakeholder-alignment]
