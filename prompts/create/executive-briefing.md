@@ -6,6 +6,49 @@
 
 ---
 
+## 🧩 Prompt Card
+
+| 항목 | 내용 |
+|------|------|
+| ID | `executive-briefing` |
+| Job | 제품/AI 기능 결정을 3분 안에 판단 가능한 브리핑으로 바꾸기 |
+| Best for | 1인 빌더, PM, CPO, Founder, Executive |
+| Required inputs | 결정해야 할 안건, 추천안, 기대 효과, 비용/기간, 리스크 |
+| Optional inputs | PRD, 경쟁사 근거, 재무 추정, 대안, 승인 후 실행 계획 |
+| Output | 3줄 요약, 결정 요청, 추천안, 대안 비교, 리스크, 다음 7일 액션 |
+| Next prompts | `stakeholder-alignment` → `storytelling` |
+| Evaluation | [`evals/scenarios/core.yaml`](../../evals/scenarios/core.yaml)의 `starter-executive-briefing` |
+
+## ✅ Output Contract
+
+AI의 답변은 반드시 다음을 포함해야 합니다:
+
+1. **3줄 요약**: 문제, 추천안, 요청 결정을 첫 화면에 배치
+2. **Decision Request**: 승인/보류/중단/추가 검증 중 무엇을 원하는지 명시
+3. **Recommendation**: 추천안과 그 이유
+4. **대안 비교**: Build/Buy/Delay/Do nothing 등 선택지를 같은 기준으로 비교
+5. **Impact-Cost-Risk**: 기대 효과, 비용, 리스크를 한 표에 정리
+6. **1인 빌더용 자기 의사결정**: 이번 주 할 일, 버릴 선택지, 학습 리스크
+7. **CPO용 전략 판단**: 전략 목표, 조직 리소스, 경쟁 대응과의 연결
+8. **다음 7일 액션**: 승인 후 바로 실행할 단계
+9. **다음 프롬프트 연결**: 어떤 이해관계자 메시지를 `stakeholder-alignment`에 넘길지
+
+## 👥 사용 모드
+
+| 모드 | 초점 | 좋은 결과 |
+|------|------|-----------|
+| 1인 빌더 | 지금 이걸 해야 하는가 | 이번 주 결정과 하지 않을 일 |
+| PM | 팀/리더의 승인 확보 | 실행 계획과 리스크가 포함된 요청 문서 |
+| CPO | 전략적 자원 배분 | 대안 비교와 조직 차원의 의사결정 |
+
+## 🧪 실패 기준
+
+- 배경 설명이 길고 결정 요청이 늦게 나오면 실패입니다.
+- 리스크와 대안이 없으면 의사결정 문서가 아닙니다.
+- “다음 7일 액션”이 없으면 실행으로 이어지지 않습니다.
+
+---
+
 ## 🎯 이 프롬프트가 해결하는 problem
 
 경영진(CEO, CFO, CTO)은 **기술 세부사항을 원하지 않습니다**.

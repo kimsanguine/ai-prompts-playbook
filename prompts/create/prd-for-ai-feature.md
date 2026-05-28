@@ -6,6 +6,50 @@
 
 ---
 
+## 🧩 Prompt Card
+
+| 항목 | 내용 |
+|------|------|
+| ID | `prd-for-ai-feature` |
+| Job | AI 기능 아이디어를 평가 가능하고 출시 판단 가능한 PRD로 바꾸기 |
+| Best for | 1인 빌더, PM, CPO, AI Engineer |
+| Required inputs | 문제 정의, 기능 목표, 사용자, 데이터 소스, 성공 기준, 실패하면 안 되는 상황 |
+| Optional inputs | 모델 후보, API 비용, 개인정보/규제 제약, 수동 대체 방법, 기존 지표 |
+| Output | AI PRD, 평가 계획, 실패 시나리오, Human fallback, Launch Gate, Risk Register |
+| Next prompts | `ai-ethics-review` → `ai-adoption-metrics` → `executive-briefing` |
+| Evaluation | [`evals/scenarios/core.yaml`](../../evals/scenarios/core.yaml)의 `starter-ai-prd` |
+
+## ✅ Output Contract
+
+AI의 답변은 반드시 다음을 포함해야 합니다:
+
+1. **PRD 요약**: 사용자 문제, AI 역할, 기대 가치
+2. **입력/출력 계약**: 어떤 데이터를 받아 어떤 결과를 내는지
+3. **모델 품질 기준**: 정확도, 신뢰도, 지연 시간, 비용, 커버리지 등 측정 가능한 기준
+4. **실패 시나리오**: False positive/negative, hallucination, 지연, 개인정보 노출
+5. **Human fallback**: AI가 실패하거나 확신이 낮을 때 사람이 개입하는 방식
+6. **1인 빌더용 축약 PRD**: 수동으로 대체 가능한 부분, 최소 테스트셋, API 비용 추정
+7. **Eval Plan**: 출시 전 테스트 데이터, 합격 기준, 실패 시 수정 루프
+8. **Launch Gate**: 출시 전 반드시 통과해야 하는 조건
+9. **Risk Register**: 데이터, 법무, 윤리, 운영 리스크와 완화책
+10. **다음 프롬프트 연결**: 어떤 항목을 `ai-ethics-review`와 `ai-adoption-metrics`에 넘길지
+
+## 👥 사용 모드
+
+| 모드 | 초점 | 좋은 결과 |
+|------|------|-----------|
+| 1인 빌더 | 작게 만들고 빠르게 검증 | API 비용과 수동 fallback이 있는 MVP PRD |
+| PM | 팀이 만들 수 있는 요구사항 | 엔지니어, 디자이너, 데이터 담당자가 이해하는 명세 |
+| CPO | 투자와 리스크 판단 | 출시 조건, 전략적 가치, 중단 기준 |
+
+## 🧪 실패 기준
+
+- 일반 기능 PRD처럼 기능 설명만 있으면 실패입니다.
+- 모델 품질 기준이 숫자로 없으면 실패입니다.
+- AI 실패 시나리오와 fallback이 없으면 출시 가능한 PRD가 아닙니다.
+
+---
+
 ## 🎯 이 프롬프트가 해결하는 problem
 
 AI 제품은 일반 소프트웨어와 근본적으로 다릅니다.

@@ -9,7 +9,7 @@ prompts:
     title: 경쟁사 감성 분석
     category: analyze
     path: prompts/analyze/competitor-sentiment.md
-    audience: [PM, CPO, marketer]
+    audience: [solo_builder, PM, CPO, marketer]
     input_types: [reviews, competitor_name]
     output_types: [personas, sentiment_scores, opportunity_matrix]
     tags: [competitor, review, sentiment, JTBD, opportunity]
@@ -19,7 +19,7 @@ prompts:
     title: 문제 정의 프레이밍
     category: analyze
     path: prompts/analyze/problem-framing.md
-    audience: [PM, designer, founder]
+    audience: [solo_builder, PM, designer, founder]
     input_types: [symptoms, user_feedback, business_context]
     output_types: [problem_statement, assumptions, validation_questions]
     tags: [problem, framing, discovery, assumptions]
@@ -80,7 +80,7 @@ prompts:
     title: 기능 우선순위 결정
     category: decide
     path: prompts/decide/feature-prioritization.md
-    audience: [PM, product_trio]
+    audience: [solo_builder, PM, product_trio]
     input_types: [feature_list, reach_estimates, effort_estimates]
     output_types: [RICE_scores, priority_order, roadmap]
     tags: [RICE, priority, roadmap]
@@ -141,7 +141,7 @@ prompts:
     title: AI 기능 PRD 작성
     category: create
     path: prompts/create/prd-for-ai-feature.md
-    audience: [PM, AI_engineer, CPO]
+    audience: [solo_builder, PM, AI_engineer, CPO]
     input_types: [feature_goal, model_requirements, data_sources]
     output_types: [AI_PRD, failure_modes, evaluation_plan]
     tags: [PRD, AI, model, evaluation]
@@ -211,7 +211,7 @@ prompts:
     title: 경영진 전략 브리핑
     category: create
     path: prompts/create/executive-briefing.md
-    audience: [CPO, PM, founder]
+    audience: [solo_builder, CPO, PM, founder]
     input_types: [strategy_context, metrics, decision_needed]
     output_types: [executive_brief, recommendation, decision_request]
     tags: [executive, briefing, strategy]
