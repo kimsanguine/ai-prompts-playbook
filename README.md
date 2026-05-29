@@ -3,7 +3,7 @@
 **한국 1인 빌더·PM·CPO를 위한 업무형 AI 프롬프트 레지스트리 + 실행 워크플로우 + 평가 가능한 샘플셋**
 
 <p align="center">
-  <img src="assets/playbook-overview.svg" alt="AI Prompts Playbook Overview — 3-Layer Cognitive Framework" width="960">
+  <img src="assets/hero-question-prism.png" alt="AI Prompts Playbook — Question Prism Framework" width="960">
 </p>
 
 이 저장소는 범용 프롬프트 모음이 아닙니다. 혼자 제품을 만들거나 제품 의사결정을 맡는 사람이 매일 하는 일을 **입력 → 프롬프트 → 산출물 → 검증 → 다음 업무**로 연결하기 위한 실행형 플레이북입니다.
