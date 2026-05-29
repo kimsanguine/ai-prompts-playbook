@@ -1,7 +1,7 @@
 schema_version: 1
 updated: "2026-03-12"
 counts:
-  workflow_prompts: 30
+  workflow_prompts: 35
   meta_docs: 5
   templates: 2
 prompts:
@@ -15,6 +15,21 @@ prompts:
     tags: [competitor, review, sentiment, JTBD, opportunity]
     starter: true
     next: [problem-framing, positioning-strategy, executive-briefing]
+  - id: discovery-insight-synthesis
+    title: Discovery 인사이트 합성
+    category: analyze
+    path: prompts/analyze/discovery-insight-synthesis.md
+    audience: [PM, researcher, founder]
+    input_types: [interviews, surveys, usage_logs, transcripts]
+    output_types: [insights, evidence_quotes, synthesis_table, weak_signals]
+    tags: [discovery, research, synthesis, insight, AI_PM]
+    starter: false
+    next: [problem-framing, feature-prioritization, requirements-to-prd]
+    source:
+      repo: kimsanguine/AI_PM
+      paths:
+        - templates/commands/discovery.md
+        - skills/discovery-synthesizer/SKILL.md
   - id: problem-framing
     title: 문제 정의 프레이밍
     category: analyze
@@ -75,6 +90,21 @@ prompts:
     tags: [company, DART, JobPlanet, competitor]
     starter: false
     next: [positioning-strategy, executive-briefing]
+  - id: competitor-battlecard
+    title: 경쟁사 배틀카드
+    category: analyze
+    path: prompts/analyze/competitor-battlecard.md
+    audience: [PM, CPO, sales, strategy]
+    input_types: [competitors, public_data, pricing, feature_matrix]
+    output_types: [comparison_table, battlecards, differentiators, limitations]
+    tags: [competitor, battlecard, positioning, sales_enablement, AI_PM]
+    starter: false
+    next: [positioning-strategy, stakeholder-alignment, executive-briefing]
+    source:
+      repo: kimsanguine/AI_PM
+      paths:
+        - templates/commands/competitor.md
+        - skills/competitor-battlecard/SKILL.md
 
   - id: feature-prioritization
     title: 기능 우선순위 결정
@@ -147,6 +177,21 @@ prompts:
     tags: [PRD, AI, model, evaluation]
     starter: true
     next: [ai-adoption-metrics, ai-ethics-review, stakeholder-alignment]
+  - id: socratic-prd-generator
+    title: 소크라틱 PRD 생성기
+    category: create
+    path: prompts/create/socratic-prd-generator.md
+    audience: [PM, founder, product_trio]
+    input_types: [feature_idea, user_problem, success_metric, constraints]
+    output_types: [clarifying_questions, solution_options, PRD, review_notes]
+    tags: [PRD, socratic, product_definition, assumptions, AI_PM]
+    starter: false
+    next: [user-story, stakeholder-alignment, executive-briefing]
+    source:
+      repo: kimsanguine/AI_PM
+      paths:
+        - templates/commands/prd.md
+        - skills/prd-generator/SKILL.md
   - id: user-story
     title: 유저 스토리 작성
     category: create
@@ -238,6 +283,20 @@ prompts:
     tags: [metrics, AI, adoption, trust]
     starter: false
     next: [ab-test-design, retention-analysis]
+  - id: kpi-definition-card
+    title: KPI 정의 카드
+    category: measure
+    path: prompts/measure/kpi-definition-card.md
+    audience: [PM, CPO, data_analyst, operations]
+    input_types: [KPI_name, business_context, data_source]
+    output_types: [KPI_card, formula, thresholds, owner, guardrails]
+    tags: [KPI, metrics, dashboard, governance, AI_PM]
+    starter: false
+    next: [executive-briefing, stakeholder-alignment]
+    source:
+      repo: kimsanguine/AI_PM
+      paths:
+        - skills/kpi-card-builder/SKILL.md
   - id: ab-test-design
     title: A/B 테스트 설계
     category: measure
@@ -248,6 +307,20 @@ prompts:
     tags: [experiment, AB_test, sample_size]
     starter: false
     next: [ai-adoption-metrics, retention-analysis]
+  - id: experiment-result-analysis
+    title: 실험 결과 분석
+    category: measure
+    path: prompts/measure/experiment-result-analysis.md
+    audience: [PM, growth, data_analyst]
+    input_types: [experiment_result, p_value, sample_size, guardrails]
+    output_types: [decision_recommendation, result_table, guardrail_review, next_step]
+    tags: [experiment, AB_test, decision, ship_iterate_kill, AI_PM]
+    starter: false
+    next: [executive-briefing, retention-analysis, ab-test-design]
+    source:
+      repo: kimsanguine/AI_PM
+      paths:
+        - skills/experiment-analyzer/SKILL.md
   - id: retention-analysis
     title: 리텐션 분석
     category: measure

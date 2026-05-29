@@ -5,7 +5,7 @@
 *Think like a PM. Prompt like an engineer. Ship with AI.*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Prompts](https://img.shields.io/badge/Workflow%20Prompts-30-blue.svg)](#-프롬프트-목록)
+[![Prompts](https://img.shields.io/badge/Workflow%20Prompts-35-blue.svg)](#-프롬프트-목록)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 ---
@@ -64,10 +64,10 @@ AI에게 "경쟁사 분석해줘"라고 하면 위키피디아 수준의 요약�
 
 ## 📂 프롬프트 목록
 
-업무 프롬프트는 30개입니다. 철학, 사용법, 빌더 같은 메타 문서는 별도 가이드로 관리합니다.
+업무 프롬프트는 35개입니다. 철학, 사용법, 빌더 같은 메타 문서는 별도 가이드로 관리합니다.
 
 <details>
-<summary><b>🔍 분석하기 (analyze/) — 7개 프롬프트</b></summary>
+<summary><b>🔍 분석하기 (analyze/) — 9개 프롬프트</b></summary>
 
 > *"데이터는 있는데, 어디서부터 봐야 할지 모르겠어요"*
 > *"경쟁사 분석을 했는데, '그래서 뭐?' 하는 반응이 돌아왔어요"*
@@ -77,12 +77,14 @@ AI에게 "경쟁사 분석해줘"라고 하면 위키피디아 수준의 요약�
 | 프롬프트 | 이럴 때 쓰세요 |
 |---------|--------------|
 | 🎯 [경쟁사 감성 분석](analyze/competitor-sentiment.md) | 앱스토어/Reddit 리뷰에서 경쟁사 약점을 찾아야 할 때 |
+| 🔎 [Discovery 인사이트 합성](analyze/discovery-insight-synthesis.md) | 인터뷰, 설문, 로그를 PRD/실험 후보로 합성해야 할 때 |
 | 🔍 [문제 정의 프레이밍](analyze/problem-framing.md) | "무슨 문제를 풀어야 하지?"가 명확하지 않을 때 |
 | 🎯 [Jobs to Be Done 분석](analyze/jobs-to-be-done.md) | 사용자가 진짜 원하는 게 뭔지 파악해야 할 때 |
 | 👤 [페르소나 프로파일링](analyze/persona-profiling.md) | 감 대신 데이터로 타겟 사용자를 정의해야 할 때 |
 | 🗺️ [고객 여정 맵핑](analyze/customer-journey-mapping.md) | 사용자 경험의 어느 단계에서 이탈하는지 알고 싶을 때 |
 | 🌍 [PESTEL 거시환경 분석](analyze/pestel-analysis.md) | 시장 진출이나 신규 사업의 외부 리스크를 점검할 때 |
 | 🏢 [기업/경쟁사 프로파일링](analyze/company-profiling.md) | 경쟁사나 파트너사의 전략, 조직, 재무를 빠르게 파악할 때 |
+| 🥊 [경쟁사 배틀카드](analyze/competitor-battlecard.md) | 동일 축 비교를 세일즈/전략 메시지로 바꿔야 할 때 |
 
 </details>
 
@@ -106,7 +108,7 @@ AI에게 "경쟁사 분석해줘"라고 하면 위키피디아 수준의 요약�
 </details>
 
 <details>
-<summary><b>🛠️ 만들기 (create/) — 9개 프롬프트</b></summary>
+<summary><b>🛠️ 만들기 (create/) — 10개 프롬프트</b></summary>
 
 > *"PRD를 써야 하는데, AI 기능의 스펙을 어떻게 정의하지?"*
 > *"유저 스토리를 썼는데, 개발팀이 '이걸로는 못 만들어요'라고 해요"*
@@ -116,6 +118,7 @@ AI에게 "경쟁사 분석해줘"라고 하면 위키피디아 수준의 요약�
 | 프롬프트 | 이럴 때 쓰세요 |
 |---------|--------------|
 | 📝 [AI 기능 PRD 작성](create/prd-for-ai-feature.md) | AI/ML 기능의 요구사항 문서를 작성해야 할 때 |
+| 📄 [소크라틱 PRD 생성기](create/socratic-prd-generator.md) | PRD를 쓰기 전에 가정과 선택지를 질문으로 검증하고 싶을 때 |
 | 📖 [유저 스토리 작성](create/user-story.md) | INVEST 원칙에 맞는 유저 스토리가 필요할 때 |
 | 🗺️ [유저 스토리 맵핑](create/user-story-mapping.md) | 스토리를 전체 제품 맥락에서 배치하고 릴리즈를 계획할 때 |
 | ✂️ [유저 스토리 분할](create/user-story-splitting.md) | 스토리가 너무 커서 한 스프린트에 안 들어갈 때 |
@@ -128,7 +131,7 @@ AI에게 "경쟁사 분석해줘"라고 하면 위키피디아 수준의 요약�
 </details>
 
 <details>
-<summary><b>📊 측정하기 (measure/) — 3개 프롬프트</b></summary>
+<summary><b>📊 측정하기 (measure/) — 5개 프롬프트</b></summary>
 
 > *"AI 기능을 출시했는데, 성공을 어떻게 정의하죠?"*
 > *"A/B 테스트를 하고 싶은데, 실험 설계를 어떻게 해야 하나요?"*
@@ -138,7 +141,9 @@ AI에게 "경쟁사 분석해줘"라고 하면 위키피디아 수준의 요약�
 | 프롬프트 | 이럴 때 쓰세요 |
 |---------|--------------|
 | 📈 [AI 기능 채택 메트릭](measure/ai-adoption-metrics.md) | AI 기능의 성공 지표(채택률, Trust Score, 리텐션)를 정의할 때 |
+| 📏 [KPI 정의 카드](measure/kpi-definition-card.md) | 추상 KPI를 계산식, source, owner가 있는 운영 카드로 바꿀 때 |
 | 🧪 [A/B 테스트 설계](measure/ab-test-design.md) | AI 기능의 실험 설계와 가설 수립이 필요할 때 |
+| 🧪 [실험 결과 분석](measure/experiment-result-analysis.md) | 실험 결과를 ship / iterate / kill 권고로 정리해야 할 때 |
 | 📉 [리텐션 분석](measure/retention-analysis.md) | 코호트별 리텐션을 분석하고 이탈 원인을 진단할 때 |
 
 </details>
@@ -210,7 +215,7 @@ AI에게 "경쟁사 분석해줘"라고 하면 위키피디아 수준의 요약�
 
 ## 🎓 처음이세요? 이 순서로 시작하세요
 
-전체 30개를 한 번에 보지 말고, 루트의 [Starter Path](../starter/)를 먼저 따라가세요.
+전체 35개를 한 번에 보지 말고, 루트의 [Starter Path](../starter/)를 먼저 따라가세요.
 
 | 단계 | 뭘 하나요? | 소요 시간 |
 |------|-----------|----------|
@@ -316,13 +321,16 @@ AI에게 "경쟁사 분석해줘"라고 하면 위키피디아 수준의 요약�
 
 | 프로젝트 | 설명 |
 |----------|------|
+| [AI_PM](https://github.com/kimsanguine/AI_PM) | 일부 프롬프트가 실제 Claude Code command/skill로 쓰인 교육형 PM 워크플로우 |
 | [AI_PM_Skills](https://github.com/kimsanguine/AI_PM_Skills) | 이 Playbook의 프롬프트를 Claude Code Skills로 자동화 |
 | [100 Agents](https://github.com/kimsanguine/AI_Engineer) | AI Agent 컬렉션 — Playbook의 워크플로우를 Agent가 실행 |
 
 ```
-ai-prompts-playbook (사고법)
+AI_PM (실전 교육/워크플로우)
+       ↕ field-tested prompts
+ai-prompts-playbook (canonical prompt registry)
        ↕ Layer 3 → Skills
-AI_PM_Skills (자동화)
+AI_PM_Skills (자동화 패키지)
        ↕ Skills → Agent 도구
 100 Agents (실행)
 ```

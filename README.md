@@ -19,7 +19,7 @@
 
 | 문제 | 이 플레이북의 답 |
 |------|------------------|
-| 프롬프트가 너무 많아 뭘 써야 할지 모른다 | 30개 업무 프롬프트를 역할, 입력, 출력, 다음 단계로 정리 |
+| 프롬프트가 너무 많아 뭘 써야 할지 모른다 | 35개 업무 프롬프트를 역할, 입력, 출력, 다음 단계로 정리 |
 | AI 결과가 그럴듯하지만 의사결정에 쓰기 어렵다 | 판단 기준, 근거, 가정, 검증 질문을 출력에 포함 |
 | 프롬프트가 한 번 쓰고 끝난다 | 앞 프롬프트의 출력이 다음 프롬프트의 입력이 되는 워크플로우 설계 |
 | 한국 제품 업무 맥락이 빠진다 | PIPA, DART, 잡플래닛, 품의서, 합의제 의사결정 맥락 반영 |
@@ -29,11 +29,23 @@
 
 | 경로 | 역할 |
 |------|------|
-| [`prompts/`](prompts/) | 30개 업무 프롬프트와 5개 메타 가이드 |
+| [`prompts/`](prompts/) | 35개 업무 프롬프트와 5개 메타 가이드 |
 | [`registry/`](registry/) | 앱, RAG, 검색에 쓰기 위한 구조화 메타데이터 |
 | [`starter/`](starter/) | 초급자를 위한 5단계 시작 경로 |
 | [`evals/`](evals/) | 프롬프트 품질 평가 기준과 핵심 시나리오 |
 | [`docs/`](docs/) | 시장 조사, 전략, 설계 배경 |
+
+## AI_PM에서 검증된 프롬프트
+
+일부 프롬프트는 [kimsanguine/AI_PM](https://github.com/kimsanguine/AI_PM)의 Claude Code for PMs 과정에서 실제 command/skill로 사용된 패턴을 범용 프롬프트 카드로 재구성했습니다.
+
+| AI_PM 실행 자산 | 이 레포의 canonical prompt |
+|----------------|----------------------------|
+| `/discovery`, `discovery-synthesizer` | [Discovery 인사이트 합성](prompts/analyze/discovery-insight-synthesis.md) |
+| `/competitor`, `competitor-battlecard` | [경쟁사 배틀카드](prompts/analyze/competitor-battlecard.md) |
+| `/prd`, `prd-generator` | [소크라틱 PRD 생성기](prompts/create/socratic-prd-generator.md) |
+| `experiment-analyzer` | [실험 결과 분석](prompts/measure/experiment-result-analysis.md) |
+| `kpi-card-builder` | [KPI 정의 카드](prompts/measure/kpi-definition-card.md) |
 
 ## AI에게 "답"을 구하지 마세요. "질문하는 법"을 바꾸세요.
 
@@ -43,7 +55,7 @@
 
 같은 AI. 다른 질문. 완전히 다른 결과.
 
-이 플레이북은 **"AI에게 어떻게 질문할 것인가"**에 대한 30개의 업무 프롬프트와 5개의 메타 가이드입니다.
+이 플레이북은 **"AI에게 어떻게 질문할 것인가"**에 대한 35개의 업무 프롬프트와 5개의 메타 가이드입니다.
 1인 빌더와 PM/CPO가 매일 하는 일 — 경쟁사 분석, PRD 작성, 우선순위 결정, AI 기능 설계, 의사결정 보고 — 을
 **구조화된 질문, 판단 기준, 검증 루프**로 풀어냅니다.
 
@@ -165,7 +177,7 @@ graph TD
 
 ## 🧭 초급자는 여기서 시작하세요
 
-30개를 모두 읽지 마세요. 처음에는 [`starter/`](starter/)의 5개 경로만 따라가면 됩니다.
+35개를 모두 읽지 마세요. 처음에는 [`starter/`](starter/)의 5개 경로만 따라가면 됩니다.
 
 | 순서 | 프롬프트 | 결과물 |
 |------|----------|--------|
@@ -222,20 +234,22 @@ graph TD
 
 ---
 
-## 📦 전체 30개 업무 프롬프트
+## 📦 전체 35개 업무 프롬프트
 
 <details>
-<summary><b>🔍 analyze/ — 데이터 구조화 & 패턴 발견 (7개)</b></summary>
+<summary><b>🔍 analyze/ — 데이터 구조화 & 패턴 발견 (9개)</b></summary>
 
 | 프롬프트 | 핵심 |
 |---------|------|
 | [경쟁사 감정 분석](prompts/analyze/competitor-sentiment.md) | 리뷰 데이터 → 5개 페르소나 + 감정 점수 + 기회 매트릭스 |
+| [Discovery 인사이트 합성](prompts/analyze/discovery-insight-synthesis.md) | 인터뷰·설문·로그 → 근거 있는 인사이트 |
 | [문제 정의](prompts/analyze/problem-framing.md) | 모호한 문제 → 구조화된 Problem Statement |
 | [Jobs to Be Done](prompts/analyze/jobs-to-be-done.md) | 기능 중심 → Job 중심 사고 전환 |
 | [페르소나 프로파일링](prompts/analyze/persona-profiling.md) | 데이터 기반 페르소나 생성 |
 | [고객 여정 맵](prompts/analyze/customer-journey-mapping.md) | 접점별 감정 곡선 + 기회 포인트 |
 | [PESTEL 분석](prompts/analyze/pestel-analysis.md) | 거시환경 → 제품 전략 영향도 |
 | [기업 프로파일링](prompts/analyze/company-profiling.md) | DART + 잡플래닛 한국 기업 분석 |
+| [경쟁사 배틀카드](prompts/analyze/competitor-battlecard.md) | 동일 축 비교 + 세일즈 공격/응답 |
 
 </details>
 
@@ -254,11 +268,12 @@ graph TD
 </details>
 
 <details>
-<summary><b>🛠️ create/ — 문서 & 산출물 (9개)</b></summary>
+<summary><b>🛠️ create/ — 문서 & 산출물 (10개)</b></summary>
 
 | 프롬프트 | 핵심 |
 |---------|------|
 | [AI 기능 PRD](prompts/create/prd-for-ai-feature.md) | 모델 스펙 + 실패 시나리오 |
+| [소크라틱 PRD 생성기](prompts/create/socratic-prd-generator.md) | 질문 → 옵션 비교 → PRD |
 | [유저 스토리](prompts/create/user-story.md) | INVEST + Bad vs Good 비교 |
 | [유저 스토리 맵핑](prompts/create/user-story-mapping.md) | Activity → Task → Story |
 | [유저 스토리 분할](prompts/create/user-story-splitting.md) | 스프린트 단위 분할 |
@@ -271,12 +286,14 @@ graph TD
 </details>
 
 <details>
-<summary><b>📊 measure/ — 지표 & 실험 (3개)</b></summary>
+<summary><b>📊 measure/ — 지표 & 실험 (5개)</b></summary>
 
 | 프롬프트 | 핵심 |
 |---------|------|
 | [AI 도입 메트릭스](prompts/measure/ai-adoption-metrics.md) | 신뢰도를 핵심 지표로 |
+| [KPI 정의 카드](prompts/measure/kpi-definition-card.md) | 계산식 + source + owner |
 | [A/B 테스트 설계](prompts/measure/ab-test-design.md) | AI 특화 샘플 크기 |
+| [실험 결과 분석](prompts/measure/experiment-result-analysis.md) | ship / iterate / kill 권고 |
 | [리텐션 분석](prompts/measure/retention-analysis.md) | 신뢰도-리텐션 인과관계 |
 
 </details>
@@ -337,7 +354,7 @@ graph TD
 
 A Harvard AI tutor study (2024) found that students who received **structured questions** achieved 2x higher learning outcomes than those who simply received answers — using the exact same AI. The difference wasn't the AI. It was the structure of the question.
 
-This playbook applies that principle to Product Management. It contains **30 workflow prompts** and **5 meta guides**. Each prompt defines a task frame, decision criteria, evidence requirements, and a verification step — not just a request for information.
+This playbook applies that principle to Product Management. It contains **35 workflow prompts** and **5 meta guides**. Each prompt defines a task frame, decision criteria, evidence requirements, and a verification step — not just a request for information.
 
 ```mermaid
 graph LR

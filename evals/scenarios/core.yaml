@@ -82,3 +82,91 @@ scenarios:
     failure_signals:
       - "배경 설명이 길고 요청이 늦게 나온다"
       - "리스크와 대안이 없다"
+  - id: ai-pm-discovery-synthesis
+    prompt_id: discovery-insight-synthesis
+    layer: 1
+    purpose: AI_PM의 Discovery command 패턴이 약한 신호와 강한 인사이트를 구분하는지 검증
+    sample_input:
+      data_shape: "respondent_id, segment, quote, usage_signal"
+      sample_size: 24
+      context: "PM의 보고서 작성 자동화 기회 탐색"
+    must_include:
+      - insight_count_3_to_7
+      - quoted_evidence
+      - weak_signals
+      - synthesis_table
+      - limitations
+    failure_signals:
+      - "N=1-2 패턴을 강한 인사이트로 승격한다"
+      - "quote 없이 추상적 테마만 제시한다"
+  - id: ai-pm-competitor-battlecard
+    prompt_id: competitor-battlecard
+    layer: 1
+    purpose: 동일 축 비교와 세일즈 현장형 공격/응답을 생성하는지 검증
+    sample_input:
+      competitors: ["Notion", "Linear", "Productboard"]
+      data_shape: "pricing, features, reviews, target_segment"
+    must_include:
+      - comparison_table
+      - battlecards
+      - likely_attack_and_response
+      - evidence_freshness
+      - limitations
+    failure_signals:
+      - "근거 없이 우리가 더 낫다고 단정한다"
+      - "경쟁사별 공격 문장이 실제 세일즈 대화처럼 보이지 않는다"
+  - id: ai-pm-socratic-prd
+    prompt_id: socratic-prd-generator
+    layer: 1
+    purpose: PRD를 바로 쓰지 않고 질문과 옵션 비교를 먼저 수행하는지 검증
+    sample_input:
+      feature_name: "AI 고객 문의 자동 분류"
+      user_problem: "CS팀이 반복 문의를 수동 triage한다"
+      success_metric: "평균 1차 분류 시간 50% 감소"
+    must_include:
+      - clarifying_questions
+      - assumptions
+      - solution_options
+      - option_matrix
+      - multi_perspective_review
+    failure_signals:
+      - "질문 없이 PRD 본문부터 작성한다"
+      - "솔루션 옵션이 하나뿐이다"
+  - id: ai-pm-experiment-result
+    prompt_id: experiment-result-analysis
+    layer: 1
+    purpose: 실험 결과를 통계적 유의성과 비즈니스 의미로 분리해 권고하는지 검증
+    sample_input:
+      experiment_name: "checkout CTA copy test"
+      control_n: 1200
+      treatment_n: 1180
+      primary_metric_delta: "+1.2%"
+      p_value: 0.041
+      guardrail: "refund_rate +0.8%"
+    must_include:
+      - one_line_conclusion
+      - result_table
+      - guardrail_review
+      - suspicion_signals
+      - ship_iterate_kill_extend
+    failure_signals:
+      - "p<0.05만 보고 ship을 권고한다"
+      - "가드레일 악화를 결론에 반영하지 않는다"
+  - id: ai-pm-kpi-card
+    prompt_id: kpi-definition-card
+    layer: 1
+    purpose: 추상 KPI를 측정 가능한 정의 카드로 바꾸는지 검증
+    sample_input:
+      kpi_name: "사용자 만족도"
+      context: "AI PM assistant의 주간 리포트 품질 관리"
+      data_sources: ["thumbs_up_down", "weekly_survey", "repeat_usage"]
+    must_include:
+      - measurable_definition
+      - formula
+      - source_owner
+      - thresholds
+      - counterexamples
+      - guardrail_metrics
+    failure_signals:
+      - "측정 불가능한 KPI를 그대로 카드화한다"
+      - "반사례와 의존 KPI가 없다"
